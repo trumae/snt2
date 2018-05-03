@@ -13,12 +13,9 @@ namespace comblib
 * Examples:
 *
 * PartitionGenerator part(4);
-*
 * while (! part.depleted()) {
-*
-part.printForDebug("", "\n");
-*
-part.generateNext();
+*     part.printForDebug("", "\n");
+*     part.generateNext();
 * }
 *
 * Prints:
@@ -89,6 +86,8 @@ public:
     void printForDebug(std::string prefix, std::string suffix) const;
 
 private:
+    void printSet(std::vector<unsigned int> s) const;
+
     unsigned int n_;
     bool includeTrivial_;
     bool end_;

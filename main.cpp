@@ -20,7 +20,7 @@ void testStringBin(int n) {
 
 int main()
 {
-/*    testStringBin(4);
+    testStringBin(4);
     testStringBin(10);
 
     cout << "comb(3)" << endl;
@@ -57,11 +57,12 @@ int main()
       comb74.printForDebug("", "\n");
       comb74.generateNext();
     }
-*/
+
      PartitionGenerator part(4);
 
      while (! part.depleted()) {
          part.printForDebug("", "\n");
+         part.getPartition();
          part.generateNext();
      }
 
