@@ -1,7 +1,10 @@
 #ifndef _COMBLIB_PARTITIONGENERATOR_H
 #define _COMBLIB_PARTITIONGENERATOR_H
+
+#include <vector>
 #include <string>
 #include <set>
+
 namespace comblib
 {
 /**
@@ -73,15 +76,26 @@ public:
         }
     };
     typedef std::set<IntegerSetSet, LessThanSetSet> IntegerSetSetSet;
+
     /*
     * includeTrivial = true will include the trivial partition of S: {{}, S}
     */
+
     PartitionGenerator(unsigned int n, bool includeTrivial = false);
     ~PartitionGenerator();
     bool depleted() const;
     void generateNext();
     IntegerSetSet getPartition() const;
     void printForDebug(std::string prefix, std::string suffix) const;
+
+private:
+    unsigned int n_;
+    bool includeTrivial_;
+    bool end_;
+
+    std::vector<unsigned int> MMax_;
+    std::vector<unsigned int> MMin_;
+    std::vector<unsigned int> K_;
 };
 }
 #endif // _COMBLIB_PARTITIONGENERATOR_H

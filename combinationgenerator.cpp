@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 namespace comblib {
 
 CombinationGenerator::CombinationGenerator(unsigned int n, bool avoidAllZero, bool avoidAllOne):

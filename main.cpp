@@ -3,6 +3,7 @@
 
 #include "stringbin.h"
 #include "combinationgenerator.h"
+#include "partitiongenerator.h"
 
 using namespace std;
 using namespace comblib;
@@ -19,7 +20,7 @@ void testStringBin(int n) {
 
 int main()
 {
-    testStringBin(4);
+/*    testStringBin(4);
     testStringBin(10);
 
     cout << "comb(3)" << endl;
@@ -43,13 +44,27 @@ int main()
         comb3.generateNext();
     }
 
-     cout << endl << "comb(5, 3)" << endl;
+    cout << endl << "comb(5u, 3u)" << endl;
     CombinationGenerator comb52(5u, 3u);
     while (! comb52.depleted()) {
       comb52.printForDebug("", "\n");
       comb52.generateNext();
     }
     
+    cout << endl << "comb(7u, 4u)" << endl;
+    CombinationGenerator comb74(16u, 4u);
+    while (! comb74.depleted()) {
+      comb74.printForDebug("", "\n");
+      comb74.generateNext();
+    }
+*/
+     PartitionGenerator part(4);
+
+     while (! part.depleted()) {
+         part.printForDebug("", "\n");
+         part.generateNext();
+     }
+
     return 0;
 }
 
